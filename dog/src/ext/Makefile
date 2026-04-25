@@ -101,7 +101,7 @@ install: $(PROGS) man pp pt
 	$(CP) *.com ..\..\bin\
 
 .ignore
-clean: rm
-	rm *.OBJ
-	rm *.COM
-	rm $(MANUAL)
+clean:
+	del *.OBJ
+	del *.COM
+	del $(MANUAL)

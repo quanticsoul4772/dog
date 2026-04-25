@@ -131,13 +131,13 @@ install: dog dogdog dosdog
 	$(CP) dog.com ..\bin
 
 .ignore
-clean: rm.com
+clean:
 	cd ext
 	$(MAKE) clean
 	cd ..
 	cd util
 	$(MAKE) clean
-	cd..
-	rm *.asm
-	rm *.obj
-	rm *.com
+	cd ..
+	del *.asm
+	del *.obj
+	del *.com
