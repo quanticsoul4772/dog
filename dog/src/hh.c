@@ -33,7 +33,7 @@ History
 
 void do_hh(BYTE n)
 {
-    BYTE i, hhh[7], na;
+    BYTE i;
 
     puts("Cannot find HH.COM");
     if(n == 1) {

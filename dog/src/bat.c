@@ -117,7 +117,7 @@ void clearbat(void)
 
 void do_bat(void)
 {
-    BYTE ll,i,na,*p,*q;
+    BYTE ll,i,na;
     struct ffblk *fba;
     FILE *fp;
 
@@ -447,7 +447,7 @@ CONDITION can take the form:
 
 void do_if(BYTE n)
 {
-    BYTE i, nn=0, el, if_type, if_cmd=0, else_cmd=0, *filename, *var, *val, exist, eval[80];
+    BYTE i, nn=0, el, if_type, if_cmd=0, else_cmd=0, *filename, *var, *val, eval[80];
 
   if(n < 2) {
       puts("syntax error in command IF:\n"
@@ -823,7 +823,7 @@ Parameters:
 
 void do_44(BYTE n)
 {
-    BYTE i, *var, *set, com, *varpos, *word, *s, **cc, nn=0;
+    BYTE i, *var, *set, com, *varpos, *word, *s, nn=0;
 
     if((n < 6) || (stricmp(arg[2], "IN") != 0) || (stricmp(arg[4], "DO") != 0)) {
 	puts("Syntax error:\n"
@@ -912,7 +912,7 @@ Parameters:
 
 void do_in(BYTE n)
 {
-    BYTE i, l, *var, prompt[200]={0};
+    BYTE i, *var, prompt[200]={0};
     struct linebuffer in;
 
     if (n < 2) {

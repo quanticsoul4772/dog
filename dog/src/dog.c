@@ -392,11 +392,8 @@ BYTE find_dog(void)
 
 BYTE initialize(int nargs, char *args[])
 {
-    BYTE i,j,k,*p,*q,line[200]={0};
-    BYTE far *s;
-    BYTE far *d;
-    BYTE far *ep;
-    WORD w,nenvsz=0,nenvseg=0,eoesz,o,naliassz=0;
+    BYTE i,j,*p,line[200]={0};
+    WORD nenvsz=0,nenvseg=0,naliassz=0;
     BYTE DOS_ma, DOS_mi;
 
     /* Get DOS Version */
@@ -682,8 +679,6 @@ static BYTE getln(void)
 BYTE parsecom(BYTE * line, BYTE ll)
 {
   BYTE i=0,j=0;
-  BYTE ename[80],eval[80];
-  BYTE *p;
 
 #ifdef PARSE_DEBUG
   printf("parsecom:0-1: line(%s)\n",line);
@@ -734,7 +729,7 @@ BYTE parsecom(BYTE * line, BYTE ll)
 
 BYTE getcom(BYTE *com)
 {
-  BYTE ln,r,i;
+  BYTE ln,r;
 
   ln = getln();
 
@@ -838,10 +833,8 @@ mtf_1:
 
 BYTE redir(BYTE *c)
 {
-  BYTE l,i,pl;
-  WORD fh;
-  BYTE *fo,*fi,*p, *tmpcmd;
-  FILE *in,*out;
+  BYTE l,i;
+  BYTE *fo,*fi,*p;
 
   l = strlen(c);
   p = c;

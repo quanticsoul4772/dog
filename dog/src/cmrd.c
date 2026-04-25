@@ -32,7 +32,7 @@ History
 
 void do_cd( BYTE n)
 {
-    BYTE i,j,k,dir[80],*p,*q;
+    BYTE i,j,dir[80],*p,*q;
 
     j=strlen(arg[0]);
 

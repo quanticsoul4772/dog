@@ -101,7 +101,7 @@ void do_al( BYTE n)
 
 void do_se( BYTE n)
 {
-    BYTE b,*p, *q;
+    BYTE b,*p;
   WORD w, l;
 
   if(n == 1) {
@@ -255,8 +255,8 @@ void setalias(BYTE *varname, BYTE *value)
 
 BYTE setudata(BYTE *varname, BYTE *value, WORD blockseg)
 {
-  BYTE far *rest,*p,i, far *evalue, found=0;
-  WORD w,ss,writesize,nlen,vlen,envleft,blocksz,ovlen=0,used;
+  BYTE far *rest,*p, far *evalue, found=0;
+  WORD ss,writesize,nlen,vlen,envleft,blocksz,ovlen=0,used;
   BYTE  far *block;
 
   block = MK_FP(blockseg,0);
@@ -587,7 +587,7 @@ mam_error:
 /****************************************************************************/
 BYTE myfreemem(WORD segment) {
 
-    WORD s,e,m;
+    WORD e,m;
     asm clc;
     asm mov ah,49h;       /* DOS Free mem */
     asm mov bx, segment;
@@ -633,7 +633,7 @@ BYTE aliasreplace(BYTE *com)
 
 void evarreplace(BYTE *com, BYTE ln)
 {
-  BYTE tmp[2],eval[200], evar[50], i, j, *p, *c;
+  BYTE tmp[2],eval[200], evar[50], i, j;
   BYTE newcom[200];
 
   memset(newcom,0,200);
@@ -707,7 +707,7 @@ void evarreplace(BYTE *com, BYTE ln)
 void get_block_owner(WORD seg, BYTE *owner, BYTE size)
 {
     BYTE far *p;
-    WORD e, l;
+    WORD l;
 
     p = MK_FP(seg, 0);
     while(*p != '\0') {
