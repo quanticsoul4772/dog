@@ -227,7 +227,7 @@ ret_byte:
  */
 BYTE test_ansi(void)
 {
-    BYTE c, al_c;
+    BYTE c;
 
     printf("%c[6n", COLOR_ESC);
     c = direct_console_input();
@@ -492,7 +492,6 @@ int sort_fb(const void *pa, const void *pb)
 {
     BYTE i;
     int l;
-    long int ll;
     const struct ffblk *a, *b;
     BYTE aattrs[7], battrs[7], *aext, *bext;
 
@@ -576,9 +575,7 @@ int sort_fb(const void *pa, const void *pb)
 
 void save_entry(struct sort_entries *se, struct ffblk *fb)
 {
-    struct ffblk *e, *ne;
-    BYTE l;
-    WORD i;
+    struct ffblk *ne;
     if (se->used == se->capacity) {
 	se->capacity += 100;
 	ne = realloc(se->entries, se->capacity * sizeof(struct ffblk ));
@@ -843,7 +840,7 @@ void pause(BYTE force)
  */
 int init(int nargs, char *arg[])
 {
-    BYTE t,i,j,k,n,*p;
+    BYTE i,k,n;
 
     ls_f.w_entry = 0;
     ls_f.npatt = 1;
@@ -957,7 +954,7 @@ int init(int nargs, char *arg[])
  */
 void do_ls(void)
 {
-    BYTE *p, j, m, k;
+    BYTE *p, j, m;
     struct sort_entries entries={0, 0, NULL};
     WORD len;
     signed char r;

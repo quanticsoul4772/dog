@@ -51,14 +51,13 @@ int main(BYTE n, BYTE *arg[])
 		BYTE **patt;
 		BYTE npatt;
 	}mv_p;
-	BYTE sn_fil[MAXPATH+13], st_fil[MAXPATH+13], dn_fil[MAXPATH+13], dt_fil[MAXPATH+13];
+	BYTE sn_fil[MAXPATH+13], dn_fil[MAXPATH+13];
 	BYTE s_drv[MAXDRIVE], s_dir[MAXDIR], s_fil[MAXFILE], s_ext[MAXEXT];
 	BYTE d_drv[MAXDRIVE], d_dir[MAXDIR], d_fil[MAXFILE], d_ext[MAXEXT];
 	BYTE b, c;
 #ifdef MV_WILD
 	BYTE fn[129]={0}, wild=0;
 #endif
-	WORD r;
 	BYTE i,j,k;
 	struct ffblk ffb,*fb=&ffb;
 	struct ffblk ff;

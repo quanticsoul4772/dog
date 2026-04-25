@@ -68,12 +68,12 @@ struct dosemu_detect {
 
 int main(void)
 {
-    WORD DOG_vr,win_mode,sys_seg,cmd_seg,DR_vrnat, kernel_string_off, kernel_string_seg;
-    BYTE DR_vr,DOS_ma=3,DOS_mi=30, DOS_t_ma=0, DOS_t_mi=0, DOS_OEM=0xFD,DOS_rev=0,win_ma=0,win_mi=0, vbe_check,serial[3];
+    WORD win_mode,sys_seg,cmd_seg,DR_vrnat, kernel_string_off, kernel_string_seg;
+    BYTE DR_vr,DOS_ma=3,DOS_mi=30, DOS_t_ma=0, DOS_t_mi=0, DOS_OEM=0xFD,DOS_rev=0,win_ma=0,win_mi=0,serial[3];
     struct dosemu_detect far* given = (void far*) DOSEMU_MAGIC_LOCATION;
     struct dosemu_detect expect = {DOSEMU_MAGIC};
     char dog_str[161];
-    char *drdos_VER, *drdos_OS, *fd_VER;
+    char *drdos_VER, *fd_VER;
     char far *kernel_str = 0;
 #ifdef VR_DEBUG
     BYTE DR_nat;

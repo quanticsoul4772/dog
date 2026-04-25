@@ -53,7 +53,7 @@ void print_help(void);
 
 struct cm_attribs* cm_parse(BYTE *str)
 {
-    BYTE *p, i, s[6];
+    BYTE *p, i;
     struct cm_attribs *att = NULL;
 
     if (str == NULL) {
@@ -284,7 +284,7 @@ BYTE *cm_mkfn(BYTE *patt, struct ffblk *fb, BYTE *fn)
 
 BYTE cm_file_process(BYTE *fn, struct ffblk *fb, struct cm_attribs *attrs)
 {
-  BYTE r,f,i,ok=0;
+  BYTE ok=0;
 
   if((fb->ff_attrib & FA_DIREC) == FA_DIREC) {
       if(flag_r == FLAG_SET) {
@@ -306,8 +306,7 @@ BYTE cm_file_process(BYTE *fn, struct ffblk *fb, struct cm_attribs *attrs)
 
 BYTE cm_file(BYTE *patt, struct cm_attribs *attrs)
 {
-  BYTE r,f,i,ok=0,ret=0;
-  BYTE *p;
+  BYTE f,ok=0,ret=0;
   BYTE fn[129]={0};
   struct ffblk fb;
 
@@ -413,7 +412,7 @@ void print_help(void)
 
 int main(BYTE n,BYTE *arg[])
 {
-  BYTE a,r,f,i,j,dir[80];
+  BYTE a,i,j;
   int ret = 0;
   struct cm_attribs *attrs = NULL;
 

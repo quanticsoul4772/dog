@@ -118,9 +118,7 @@ struct sz_fsize *sz_file(BYTE *patt)
     struct sz_fsize *dsz;
     struct ffblk *fb;
     BYTE *dir, *p;
-    WORD nf, hf;
-    int done, attr;
-    DWORD s, h;
+    int done;
 
     fb = malloc(sizeof(struct ffblk));
     if (fb == NULL) {
@@ -290,8 +288,7 @@ void do_sz(void)
  */
 int init(int nargs, char *arg[])
 {
-    BYTE t,i,j,k,*p;
-    WORD df[2], dt[2];
+    BYTE i,k;
 
     sz_f.npatt = 0;
     sz_f.patt = (BYTE **) malloc(nargs * (sizeof(BYTE *)));

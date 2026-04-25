@@ -60,7 +60,7 @@ BYTE rm_dir(BYTE *dir)
 
 BYTE rm_file(BYTE *patt)
 {
-  BYTE r,f,i,ok=0,ret=0;
+  BYTE r,f,ok=0,ret=0;
   BYTE *p;
   BYTE fn[129]={0};
   struct ffblk fb;
@@ -297,7 +297,7 @@ void print_help(BYTE mode) {
 
 int main(BYTE n,BYTE *arg[])
 {
-  BYTE r,f,i,j,dir[80];
+  BYTE r,i,j;
   BYTE mode = MODE_RM;
   int ret = 0;
 

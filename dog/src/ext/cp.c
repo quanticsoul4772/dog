@@ -110,14 +110,14 @@ BYTE read_key(void);
 int main(BYTE n, BYTE *arg[])
 {
     signed char i;
-    int r, nfil = 0, done, j, k, c, attrib, acc;
+    int nfil = 0, done, j, k, c, attrib, acc;
     long fskspc;
     BYTE key;
     BYTE sn_fil[MAXPATH+13], st_fil[MAXPATH+13], dn_fil[MAXPATH+13], dt_fil[MAXPATH+13];
     BYTE s_drv[MAXDRIVE], s_dir[MAXDIR], s_fil[MAXFILE], s_ext[MAXEXT];
     BYTE d_drv[MAXDRIVE], d_dir[MAXDIR], d_fil[MAXFILE], d_ext[MAXEXT];
     WORD *buff;
-    DWORD src_sz, trg_sz;
+    DWORD trg_sz;
     FILE *src, *dst;
     struct ffblk ffb;
     struct dfree dfree;
